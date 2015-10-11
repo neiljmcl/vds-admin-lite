@@ -9,6 +9,20 @@ angular.module('myApp.view1', ['ngRoute'])
   });
 }])
 
-.controller('View1Ctrl', [function() {
+.controller('View1Ctrl', ['$scope', function($scope ) {
+  $scope.durian = "durian";
+      $scope.aubergine="pea aubergine";
+      $scope.apple = "apple"
+      $scope.celeriac="celeriac";
+}])
 
+.directive('fruitandveg', [function() {
+  return {
+    restrict: 'E',
+    scope: {
+      fruit: '=', vegetable: '='
+    },
+    template: 'fruit: {{fruit}} vegetable: {{vegetable}}<BR>'
+  };
 }]);
+
