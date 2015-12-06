@@ -1,5 +1,4 @@
-<p>This is the partial for view 1.</p>
-<div ng-controller="View1Ctrl">
-    <fruitandveg fruit="durian" vegetable="aubergine"></fruitandveg>
-    <fruitandveg fruit="apple" vegetable="parsnip"></fruitandveg>
+<p><demo-title></demo-title></p>
+<div ng-repeat="vegetable in vm.vegetables">
+    I like {{vegetable.name}} served with {{vegetable.serveWith}}
 </div>

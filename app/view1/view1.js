@@ -1,28 +1,41 @@
 'use strict';
 
-angular.module('myApp.view1', ['ngRoute'])
+angular.module('myApp.vegetables', ['ngRoute'])
+  .config(['$routeProvider', function($routeProvider) {
+    $routeProvider.when('/vegetables', {
+      template: '<vegetables></vegetables>',
+    });
+  }])
+  .value('title', 'My FavouritE Vegetables')
+  .directive('demoTitle', ['title', function(title) {
+    return {
+      restrict: 'E',
+      template: '<H1>{{title}}</H1>',
+      bindToController: false,
+      // controllerAs: 'page',
+      controller: ['$scope', function($scope) {
+        console.log("binding title: ", title);
+        var page = this;
+        $scope.title = 'feck'
+      }]
+    }
+  }])
+  .directive('vegetables', [function() {
+    return {
+      restrict: 'E',
+      templateUrl: 'view1/view1.html',
+      controller: [function() {
+        var vm = this;
+        vm.vegetables = [];
+        vm.vegetables.push({name: 'Brussels sprouts', serveWith:'Chestnuts'});
+        vm.vegetables.push({name: 'Aubergine', serveWith:'Chilli oil'});
+        vm.vegetables.push({name: 'Cabbage', serveWith:'bacon'});
+        vm.vegetables.push({name: 'Carrots', serveWith: 'harissa'});
 
-.config(['$routeProvider', function($routeProvider) {
-  $routeProvider.when('/view1', {
-    templateUrl: 'view1/view1.html',
-    controller: 'View1Ctrl'
-  });
-}])
+      }],
+      controllerAs: 'vm',
+      bindToController: true
+    };
+  }])
 
-.controller('View1Ctrl', ['$scope', function($scope ) {
-  $scope.durian = "durian";
-      $scope.aubergine="pea aubergine";
-      $scope.apple = "apple"
-      $scope.celeriac="celeriac";
-}])
-
-.directive('fruitandveg', [function() {
-  return {
-    restrict: 'E',
-    scope: {
-      fruit: '=', vegetable: '='
-    },
-    template: 'fruit: {{fruit}} vegetable: {{vegetable}}<BR>'
-  };
-}]);
 

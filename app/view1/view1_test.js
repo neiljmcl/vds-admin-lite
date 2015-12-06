@@ -1,16 +1,27 @@
 'use strict';
 
-describe('myApp.view1 module', function() {
+describe('myApp.vegetables module', function() {
 
-  beforeEach(module('myApp.view1'));
+  beforeEach(module('myApp.vegetables'));
 
-  describe('view1 controller', function(){
+  describe('This directive should ... ', function(){
 
-    it('should ....', inject(function($controller) {
+    xit('should ....', inject(function($controller) {
       //spec body
       var view1Ctrl = $controller('View1Ctrl');
       expect(view1Ctrl).toBeDefined();
     }));
+
+    it('print a title', function() {
+      module(function($provide) {
+        $provide.value('title', 'Eeeee-oh rocks!');
+      });
+      inject(function($compile, $rootScope) {
+        var element = $compile('<demo-title></demo-title>')($rootScope);
+        expect(element.text()).toEqual('feck');
+      });
+    })
+
 
   });
 });

@@ -2,13 +2,21 @@
 
 angular.module('myApp.view2', ['ngRoute'])
 
-.config(['$routeProvider', function($routeProvider) {
-  $routeProvider.when('/view2', {
-    templateUrl: 'view2/view2.html',
-    controller: 'View2Ctrl'
-  });
-}])
+  .config(['$routeProvider', function($routeProvider) {
+    $routeProvider.when('/view2', {
+      templateUrl: 'view2/view2.html',
+      controller: 'View2Ctrl'
+    });
+  }])
+  .directive('view2', [function() {
+    return {
+      restrict: 'E',
+      templateUrl: 'view2/view2.html',
+      controller: [function() {
 
-.controller('View2Ctrl', [function() {
+      }],
+      controllerAs: vm,
+      bindToController: true
 
-}]);
+    };
+  }]);
