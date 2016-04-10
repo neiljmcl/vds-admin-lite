@@ -14,7 +14,9 @@ angular.module('vdsAdmin', [
       url: '/taxonomy/{path:^.*}',
       templateUrl: 'taxonomy/taxonomy.html',
         controller: 'TaxonomyController',
-      onStart(function() {})
+      onEnter: function() {
+        console.log("We have entered the taxonomy zone")
+      }
     }).state('grid', {
       url: '/grid',
       templateUrl: 'grid.html',
