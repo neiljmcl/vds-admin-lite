@@ -1,0 +1,12 @@
+<div>
+
+    <H1>{{title}}</H1>
+    <span>{{parent}}</span> <span>{{child}}</span>
+    <H2>Path: {{path}}</H2>
+    <button ng-click="get()">{{path}}</button>
+
+    <ul ng-repeat="taxonomyPath in taxonomyPaths">
+        <li><a ui-sref="taxonomy(taxonomyPath)">{{taxonomyPath.path}}</a></li>
+    </ul>
+    <a ui-sref="taxonomy({path:'/a/b/c'})">hand rolled /a/b/c</a>
+</div>

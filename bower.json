@@ -1,15 +1,25 @@
 {
-  "name": "angular-seed",
+  "name": "vds-admin-lite",
   "description": "A starter project for AngularJS",
   "version": "0.0.0",
   "homepage": "https://github.com/angular/angular-seed",
   "license": "MIT",
   "private": true,
   "dependencies": {
-    "angular": "~1.4.0",
-    "angular-route": "~1.4.0",
-    "angular-loader": "~1.4.0",
-    "angular-mocks": "~1.4.0",
-    "html5-boilerplate": "~5.2.0"
+    "angular": "1.4.5",
+    "angular-ui-router": "0.2.8",
+    "angular-mocks": "1.4.5",
+    "html5-boilerplate": "~5.2.0",
+    "angular-animate": "1.4.5",
+    "angular-cookies": "1.4.5",
+    "angular-permission": "2.3.3",
+    "angular-ui-grid": "3.0.6",
+    "angular-sanitize": "1.4.5",
+    "angular-loading-bar": "0.7.0",
+    "bootstrap": "3.1.1",
+    "font-awesome": "4.3.0",
+    "font-awesome-animation": "0.0.6",
+    "moment": "2.10.6",
+    "underscore": "1.8.3"
   }
 }
